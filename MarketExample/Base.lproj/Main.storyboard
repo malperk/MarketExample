@@ -56,5 +56,67 @@
             </objects>
             <point key="canvasLocation" x="972" y="112.89355322338831"/>
         </scene>
+        <!--Basket-->
+        <scene sceneID="I8y-UV-JLE">
+            <objects>
+                <tableViewController storyboardIdentifier="BasketListView" id="5Jz-pE-seu" customClass="BasketListView" customModule="testRx" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ykf-NP-pft">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="zww-S2-bVU">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="kK2-ai-lYX">
+                                    <rect key="frame" x="15" y="0.0" width="345" height="44"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mm0-Ot-YNF">
+                                            <rect key="frame" x="0.0" y="0.0" width="156" height="44"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LL0-oI-9Jz">
+                                            <rect key="frame" x="189" y="0.0" width="156" height="44"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="kK2-ai-lYX" firstAttribute="top" secondItem="zww-S2-bVU" secondAttribute="top" id="M3i-L5-Iqp"/>
+                                <constraint firstAttribute="trailing" secondItem="kK2-ai-lYX" secondAttribute="trailing" constant="15" id="Mwk-fS-dT1"/>
+                                <constraint firstItem="kK2-ai-lYX" firstAttribute="leading" secondItem="zww-S2-bVU" secondAttribute="leading" constant="15" id="tIb-NM-wui"/>
+                                <constraint firstAttribute="bottom" secondItem="kK2-ai-lYX" secondAttribute="bottom" id="yVD-XF-e7j"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasketListViewCell" id="L7b-ip-gbM">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L7b-ip-gbM" id="fXc-r8-xu9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Basket" id="aVb-Ic-ng1">
+                        <barButtonItem key="rightBarButtonItem" title="Change Currency" id="4AZ-Wu-qeC"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="changeCurrencyButton" destination="4AZ-Wu-qeC" id="KZx-8q-HoR"/>
+                        <outlet property="totalPriceLabel" destination="LL0-oI-9Jz" id="Bih-a9-co3"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h08-fg-q27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2850" y="113"/>
+        </scene>
     </scenes>
 </document>

@@ -39,6 +39,10 @@ final class ProductListViewModelTests: QuickSpec {
             expect(viewModel.getBasket().count).to(equal(0))
             viewModel.itemSelected.onNext(IndexPath(row: 0, section: 0))
             expect(viewModel.getBasket().count).to(equal(1))
+            viewModel.itemDeselected.onNext(IndexPath(row: 100, section: 0))
+            expect(viewModel.getBasket().count).to(equal(1))
+            viewModel.itemDeselected.onNext(IndexPath(row: 0, section: 0))
+            expect(viewModel.getBasket().count).to(equal(0))
             viewModel.itemDeselected.onNext(IndexPath(row: 0, section: 0))
             expect(viewModel.getBasket().count).to(equal(0))
         }

@@ -29,7 +29,7 @@ final class ProductListViewModel: ProductListViewModelType {
 
         // Basket Add
         itemSelected.subscribe(onNext: { indexPath in
-            guard indexPath.row > 0, indexPath.row < self.productsVariable.value.count else {
+            guard indexPath.row > -1, indexPath.row < self.productsVariable.value.count else {
                 self.error.onNext("Wrong indexPath")
                 return
             }
@@ -43,7 +43,7 @@ final class ProductListViewModel: ProductListViewModelType {
 
         // Basket Remove
         itemDeselected.subscribe(onNext: { indexPath in
-            guard indexPath.row > 0, indexPath.row < self.productsVariable.value.count else {
+            guard indexPath.row > -1, indexPath.row < self.productsVariable.value.count else {
                 self.error.onNext("Wrong indexPath")
                 return
             }
