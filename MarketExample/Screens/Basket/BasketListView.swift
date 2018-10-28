@@ -37,6 +37,13 @@ class BasketListView: UITableViewController {
             }
             .disposed(by: disposeBag)
 
+        // Error Handling
+        viewModel.errorObservable
+            .subscribe(onNext: { [weak self] error in
+                self?.showAlert("Error", message: error)
+            })
+            .disposed(by: disposeBag)
+        
         // Total Price
         viewModel.productsObservable.map { products in
             if products.isEmpty {
@@ -68,5 +75,9 @@ class BasketListView: UITableViewController {
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(ok)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    deinit {
+        print("deinit BasketListView")
     }
 }

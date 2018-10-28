@@ -55,12 +55,12 @@ final class ProductListViewModel: ProductListViewModelType {
     private func loadData() {
         provider.rx.request(.allProducts)
             .map([Product].self)
-            .subscribe { response in
+            .subscribe { [weak self] response in
                 switch response {
                 case let .success(value):
-                    self.productsVariable.accept(value)
+                    self?.productsVariable.accept(value)
                 case .error:
-                    self.error.onNext("Parsing error. Try again later.")
+                    self?.error.onNext("Parsing error. Try again later.")
             } }.disposed(by: disposeBag)
     }
 

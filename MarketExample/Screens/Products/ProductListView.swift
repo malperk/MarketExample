@@ -10,6 +10,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
+
 class ProductListView: UITableViewController {
     @IBOutlet var basketButton: UIBarButtonItem!
     private let disposeBag = DisposeBag()
@@ -68,7 +69,8 @@ class ProductListView: UITableViewController {
     // Show Basket View
     private func showBasketScreen() {
         // Create View Model For Basket
-        let viewModel = BasketListViewModel(with: self.viewModel.getBasket(), provider: fixerApiProvider)
+        ////FIXER API FREE TIER DON'T WORK WITH BASE IT RETURN "base_currency_access_restricted"
+        let viewModel = BasketListViewModel(with: self.viewModel.getBasket(), provider: currencyConverterApiProvider)
         // Create View
         let view = storyboard!.instantiateViewController(withIdentifier: "BasketListView") as! BasketListView
         // Assign View Model to View
