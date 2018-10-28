@@ -9,6 +9,7 @@
 @testable import MarketExample
 import Nimble
 import Quick
+import RxSwift
 
 final class ProductApiTests: QuickSpec {
     override func spec() {
@@ -38,7 +39,6 @@ final class ProductApiTests: QuickSpec {
                             let products = try JSONDecoder().decode([Product].self, from: response.data)
                             expect(products).notTo(beEmpty())
                             expect(products.count).to(equal(5))
-
                         } catch {
                             fail("expect parse success")
                         }
@@ -47,6 +47,22 @@ final class ProductApiTests: QuickSpec {
                     }
                     done()
                 })
+            }
+        }
+        
+        it("parse data to Product array with RXSwift") {
+            waitUntil(timeout: 5.0) { done in
+                stubbedProductProvider.rx.request(.allProducts)
+                    .map([Product].self)
+                    .subscribe { response in
+                        switch response {
+                        case let .success(value):
+                            expect(value.count).to(equal(5))
+                        case .error:
+                            fail("expect success")
+                        }
+                        done()
+                    }.disposed(by: DisposeBag())
             }
         }
     }
