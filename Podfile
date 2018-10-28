@@ -4,6 +4,7 @@ target 'MarketExample' do
   	use_frameworks!
   	pod 'Moya/RxSwift', '~> 11.0'
 	pod 'RxCocoa',    '~> 4.0'
+	pod 'McPicker', '~> 2.0.0'
 
   target 'MarketExampleTests' do
     inherit! :search_paths

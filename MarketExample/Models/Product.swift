@@ -68,10 +68,13 @@ extension Product: Codable {}
 
 extension Product: CustomStringConvertible {
     var description: String {
-        var stringDescription = "\(name) - \(price)"
+        var stringDescription = "\(name) - " + String(format: "%.2f", price) + "\(priceType)"
         if let unwrappedUnit = unit, let unwrappedUnitType = unitType {
             switch unwrappedUnitType {
-            case .g, .kg, .bottle:
+            case .g, .kg:
+                stringDescription += " per \(unwrappedUnit.description)"
+                stringDescription += unwrappedUnitType.rawValue
+            case .bottle:
                 stringDescription += " per \(unwrappedUnit == 1 ? "" : unwrappedUnit.description)"
                 stringDescription += unwrappedUnitType.rawValue
             case .box:

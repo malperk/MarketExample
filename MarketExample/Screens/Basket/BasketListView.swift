@@ -9,6 +9,7 @@
 import RxCocoa
 import RxSwift
 import UIKit
+import McPicker
 
 class BasketListView: UITableViewController {
     @IBOutlet var changeCurrencyButton: UIBarButtonItem!
@@ -48,11 +49,17 @@ class BasketListView: UITableViewController {
             .disposed(by: disposeBag)
 
         // Change Currency
-        changeCurrencyButton.rx.tap.subscribe({ [unowned self] _ in
-            self.addPickerView()
+        changeCurrencyButton.rx.tap.subscribe({ [weak self] _ in
+            self?.addPickerView()
 
         }).disposed(by: disposeBag)
     }
 
-    func addPickerView() {}
+    func addPickerView() {
+        McPicker.show(data: viewModel.getCurrencyNames()) { [weak self] (selections: [Int: String]) -> Void in
+            if let name = selections[0] {
+                self?.viewModel.updatePrice(currencyName: name)
+            }
+        }
+    }
 }

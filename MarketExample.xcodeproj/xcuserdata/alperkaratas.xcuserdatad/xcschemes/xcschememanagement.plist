@@ -7,7 +7,20 @@
 		<key>MarketExample.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>10</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B968AABA21862C74008E6A50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B968AACE21862C76008E6A50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

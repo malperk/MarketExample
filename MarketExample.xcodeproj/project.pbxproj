@@ -22,6 +22,8 @@
 		B968AAF021863BC4008E6A50 /* ProductListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAEF21863BC4008E6A50 /* ProductListViewModelTests.swift */; };
 		B968AAF4218645C6008E6A50 /* BasketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAF3218645C6008E6A50 /* BasketListView.swift */; };
 		B968AAF6218645D5008E6A50 /* BasketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAF5218645D5008E6A50 /* BasketListViewModel.swift */; };
+		B968AAFA2186528A008E6A50 /* CurrencySymbols.json in Resources */ = {isa = PBXBuildFile; fileRef = B968AAF92186528A008E6A50 /* CurrencySymbols.json */; };
+		B968AAFC21865338008E6A50 /* CurrencySymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAFB21865338008E6A50 /* CurrencySymbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		B968AAEF21863BC4008E6A50 /* ProductListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModelTests.swift; sourceTree = "<group>"; };
 		B968AAF3218645C6008E6A50 /* BasketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketListView.swift; sourceTree = "<group>"; };
 		B968AAF5218645D5008E6A50 /* BasketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketListViewModel.swift; sourceTree = "<group>"; };
+		B968AAF92186528A008E6A50 /* CurrencySymbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrencySymbols.json; sourceTree = "<group>"; };
+		B968AAFB21865338008E6A50 /* CurrencySymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySymbol.swift; sourceTree = "<group>"; };
 		DA0BD81CB354145197C62D41 /* Pods-MarketExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-MarketExampleTests/Pods-MarketExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F484CB296AFDE6E2602F74F1 /* Pods_MarketExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE880C6BD04FB409C422060 /* Pods-MarketExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketExample.release.xcconfig"; path = "Target Support Files/Pods-MarketExample/Pods-MarketExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		B968AABD21862C74008E6A50 /* MarketExample */ = {
 			isa = PBXGroup;
 			children = (
+				B968AAF72186525A008E6A50 /* Helper */,
 				B968AAE621862EA5008E6A50 /* Networking */,
 				B968AAE021862DF2008E6A50 /* Protocols */,
 				B968AADE21862DA2008E6A50 /* Screens */,
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				B968AAE421862E75008E6A50 /* Product.swift */,
+				B968AAFB21865338008E6A50 /* CurrencySymbol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +201,22 @@
 				B968AAF5218645D5008E6A50 /* BasketListViewModel.swift */,
 			);
 			path = Basket;
+			sourceTree = "<group>";
+		};
+		B968AAF72186525A008E6A50 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B968AAF82186526C008E6A50 /* Currency */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B968AAF82186526C008E6A50 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				B968AAF92186528A008E6A50 /* CurrencySymbols.json */,
+			);
+			path = Currency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B968AAFA2186528A008E6A50 /* CurrencySymbols.json in Resources */,
 				B968AAC921862C75008E6A50 /* LaunchScreen.storyboard in Resources */,
 				B968AAC621862C75008E6A50 /* Assets.xcassets in Resources */,
 				B968AAC421862C74008E6A50 /* Main.storyboard in Resources */,
@@ -384,6 +407,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MarketExample/Pods-MarketExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/McPicker/McPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -394,6 +418,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/McPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -411,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B968AAFC21865338008E6A50 /* CurrencySymbol.swift in Sources */,
 				B968AAEC21863941008E6A50 /* ProductListView.swift in Sources */,
 				B968AAE521862E75008E6A50 /* Product.swift in Sources */,
 				B968AAEE21863952008E6A50 /* ProductListViewModel.swift in Sources */,

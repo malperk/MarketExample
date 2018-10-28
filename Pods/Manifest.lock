@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - McPicker (2.0.0)
   - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
@@ -14,6 +15,7 @@ PODS:
   - RxSwift (4.3.1)
 
 DEPENDENCIES:
+  - McPicker (~> 2.0.0)
   - Moya/RxSwift (~> 11.0)
   - Nimble
   - Quick
@@ -22,6 +24,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - McPicker
     - Moya
     - Nimble
     - Quick
@@ -31,6 +34,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  McPicker: 1d11ad8c07c337a16dd9397e45f321125304cbb0
   Moya: a725035953bc1c0eb1be505ab903984501d82440
   Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
   Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
@@ -38,6 +42,6 @@ SPEC CHECKSUMS:
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: 03681948417e83f2507ded72f942a7cae7e6b593
+PODFILE CHECKSUM: fc2bd0a8aa539351c7660f2e074b4f289dc094db
 
 COCOAPODS: 1.6.0.beta.2

@@ -20,4 +20,7 @@ protocol ProductListViewModelType: ProductListType {
     func getBasket() -> [Product]
 }
 
-protocol BasketListViewModelType: ProductListType {}
+protocol BasketListViewModelType: ProductListType {
+    func getCurrencyNames() -> [[String]]
+    func updatePrice(currencyName:String)
+}
