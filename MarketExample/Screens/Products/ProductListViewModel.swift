@@ -37,7 +37,7 @@ final class ProductListViewModel: ProductListViewModelType {
                 self.error.onNext("Product already in basket")
                 return
             }
-            
+
             self.basket.append(self.productsVariable.value[indexPath.row])
         }).disposed(by: disposeBag)
 
@@ -47,9 +47,8 @@ final class ProductListViewModel: ProductListViewModelType {
                 self.error.onNext("Wrong indexPath")
                 return
             }
-            
             self.basket = self.basket.filter { $0.name != self.productsVariable.value[indexPath.row].name }
-            
+
         }).disposed(by: disposeBag)
     }
 

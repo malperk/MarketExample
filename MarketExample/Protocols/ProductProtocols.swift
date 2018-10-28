@@ -17,4 +17,7 @@ protocol ProductListViewModelType: ProductListType {
     var errorObservable: Observable<String> { get }
     var itemSelected: PublishSubject<IndexPath> { get }
     var itemDeselected: PublishSubject<IndexPath> { get }
+    func getBasket() -> [Product]
 }
+
+protocol BasketListViewModelType: ProductListType {}

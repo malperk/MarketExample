@@ -66,5 +66,15 @@ class ProductListView: UITableViewController {
     }
 
     // Show Basket View
-    private func showBasketScreen() {}
+    private func showBasketScreen() {
+        // Create View Model For Basket
+        let viewModel = BasketListViewModel(with: self.viewModel.getBasket())
+        // Create View
+        let view = self.storyboard!.instantiateViewController(withIdentifier: "BasketListView") as! BasketListView
+        // Assign View Model to View
+        view.viewModel = viewModel
+        
+        self.navigationController?.pushViewController(view, animated: true)
+        
+    }
 }

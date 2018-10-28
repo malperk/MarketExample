@@ -6,86 +6,53 @@
 //  Copyright © 2018 Alper KARATAS. All rights reserved.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
 
 class BasketListView: UITableViewController {
     @IBOutlet var changeCurrencyButton: UIBarButtonItem!
     @IBOutlet var totalPriceLabel: UILabel!
+    private let disposeBag = DisposeBag()
+    var viewModel: BasketListViewModelType!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = nil
+        tableView.delegate = nil
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        bindUI()
     }
 
-    // MARK: - Table view data source
+    func bindUI() {
+        // Tableview cell binding
+        viewModel.productsObservable
+            .bind(to: tableView.rx.items) { tableView, i, item in
+                let indexPath = IndexPath(row: i, section: 0)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "BasketListViewCell", for: indexPath)
+                cell.textLabel?.text = item.description
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+                return cell
+            }
+            .disposed(by: disposeBag)
+
+        // Total Price
+        viewModel.productsObservable.map { products in
+            if products.isEmpty {
+                return ""
+            } else {
+                let price = products.reduce(0, { $0 + $1.price })
+                return String(format: "%.2f", price) + products.first!.priceType
+            }
+        }.bind(to: totalPriceLabel.rx.text)
+            .disposed(by: disposeBag)
+
+        // Change Currency
+        changeCurrencyButton.rx.tap.subscribe({ [unowned self] _ in
+            self.addPickerView()
+
+        }).disposed(by: disposeBag)
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    func addPickerView() {}
 }
