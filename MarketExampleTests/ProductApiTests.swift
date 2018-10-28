@@ -13,6 +13,7 @@ import RxSwift
 
 final class ProductApiTests: QuickSpec {
     override func spec() {
+        // Moya cancel base request when stubbing "load failed with error" message not important
         it("make product stub request") {
             waitUntil(timeout: 5.0) { done in
                 stubbedProductProvider.request(.allProducts, completion: { result in
@@ -49,7 +50,7 @@ final class ProductApiTests: QuickSpec {
                 })
             }
         }
-        
+
         it("parse data to Product array with RXSwift") {
             waitUntil(timeout: 5.0) { done in
                 stubbedProductProvider.rx.request(.allProducts)
