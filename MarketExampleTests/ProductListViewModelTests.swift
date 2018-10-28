@@ -15,6 +15,7 @@ final class ProductListViewModelTests: QuickSpec {
     override func spec() {
         // Moya cancel base request when stubbing "load failed with error" message not important
         let viewModel = ProductListViewModel(with: stubbedProductProvider)
+        let disposeBag = DisposeBag()
         it("it test productsObservable") {
             waitUntil(timeout: 5.0) { done in
                 viewModel.productsObservable.subscribe(onNext: { product in
@@ -22,7 +23,7 @@ final class ProductListViewModelTests: QuickSpec {
                     done()
                 }, onError: { _ in
                     fail("expect success")
-                }).disposed(by: DisposeBag())
+                }).disposed(by: disposeBag)
             }
         }
         

@@ -24,6 +24,8 @@
 		B968AAF6218645D5008E6A50 /* BasketListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAF5218645D5008E6A50 /* BasketListViewModel.swift */; };
 		B968AAFA2186528A008E6A50 /* CurrencySymbols.json in Resources */ = {isa = PBXBuildFile; fileRef = B968AAF92186528A008E6A50 /* CurrencySymbols.json */; };
 		B968AAFC21865338008E6A50 /* CurrencySymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAFB21865338008E6A50 /* CurrencySymbol.swift */; };
+		B968AAFE2186568F008E6A50 /* FixerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAFD2186568F008E6A50 /* FixerApi.swift */; };
+		B968AB00218657E4008E6A50 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAFF218657E4008E6A50 /* Rate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		B968AAF5218645D5008E6A50 /* BasketListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketListViewModel.swift; sourceTree = "<group>"; };
 		B968AAF92186528A008E6A50 /* CurrencySymbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CurrencySymbols.json; sourceTree = "<group>"; };
 		B968AAFB21865338008E6A50 /* CurrencySymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySymbol.swift; sourceTree = "<group>"; };
+		B968AAFD2186568F008E6A50 /* FixerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerApi.swift; sourceTree = "<group>"; };
+		B968AAFF218657E4008E6A50 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		DA0BD81CB354145197C62D41 /* Pods-MarketExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-MarketExampleTests/Pods-MarketExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F484CB296AFDE6E2602F74F1 /* Pods_MarketExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE880C6BD04FB409C422060 /* Pods-MarketExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketExample.release.xcconfig"; path = "Target Support Files/Pods-MarketExample/Pods-MarketExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			children = (
 				B968AAE421862E75008E6A50 /* Product.swift */,
 				B968AAFB21865338008E6A50 /* CurrencySymbol.swift */,
+				B968AAFF218657E4008E6A50 /* Rate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				B968AAE721862EC7008E6A50 /* ProductApi.swift */,
+				B968AAFD2186568F008E6A50 /* FixerApi.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -441,8 +447,10 @@
 				B968AAE521862E75008E6A50 /* Product.swift in Sources */,
 				B968AAEE21863952008E6A50 /* ProductListViewModel.swift in Sources */,
 				B968AAE221862E1A008E6A50 /* ProductProtocols.swift in Sources */,
+				B968AAFE2186568F008E6A50 /* FixerApi.swift in Sources */,
 				B968AAE821862EC7008E6A50 /* ProductApi.swift in Sources */,
 				B968AAF4218645C6008E6A50 /* BasketListView.swift in Sources */,
+				B968AB00218657E4008E6A50 /* Rate.swift in Sources */,
 				B968AAF6218645D5008E6A50 /* BasketListViewModel.swift in Sources */,
 				B968AABF21862C74008E6A50 /* AppDelegate.swift in Sources */,
 			);

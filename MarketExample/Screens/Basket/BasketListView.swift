@@ -62,4 +62,11 @@ class BasketListView: UITableViewController {
             }
         }
     }
+    
+    private func showAlert(_ title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(ok)
+        present(alertController, animated: true, completion: nil)
+    }
 }

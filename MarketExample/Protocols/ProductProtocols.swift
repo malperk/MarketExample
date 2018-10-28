@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 protocol ProductListType {
+    var errorObservable: Observable<String> { get }
     var productsObservable: Observable<[Product]> { get }
 }
 

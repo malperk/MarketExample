@@ -61,7 +61,7 @@ final class ProductListViewModel: ProductListViewModelType {
                     self.productsVariable.accept(value)
                 case .error:
                     self.error.onNext("Parsing error. Try again later.")
-            } }.disposed(by: DisposeBag())
+            } }.disposed(by: disposeBag)
     }
 
     func getBasket() -> [Product] {

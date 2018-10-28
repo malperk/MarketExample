@@ -12,6 +12,7 @@ import Quick
 import RxSwift
 
 final class ProductApiTests: QuickSpec {
+    let disposeBag = DisposeBag()
     override func spec() {
         // Moya cancel base request when stubbing "load failed with error" message not important
         it("make product stub request") {
@@ -63,7 +64,7 @@ final class ProductApiTests: QuickSpec {
                             fail("expect success")
                         }
                         done()
-                    }.disposed(by: DisposeBag())
+                    }.disposed(by: self.disposeBag)
             }
         }
     }
