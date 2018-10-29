@@ -9,7 +9,7 @@
 import RxCocoa
 import RxSwift
 import UIKit
-
+import Moya
 
 class ProductListView: UITableViewController {
     @IBOutlet var basketButton: UIBarButtonItem!
@@ -70,7 +70,8 @@ class ProductListView: UITableViewController {
     private func showBasketScreen() {
         // Create View Model For Basket
         ////FIXER API FREE TIER DON'T WORK WITH BASE IT RETURN "base_currency_access_restricted"
-        let viewModel = BasketListViewModel(with: self.viewModel.getBasket(), provider: currencyConverterApiProvider)
+        let provider = MoyaProvider<CurrencyConverterApi>(plugins: [MoyaHudPlugin()])
+        let viewModel = BasketListViewModel(with: self.viewModel.getBasket(), provider: provider)
         // Create View
         let view = storyboard!.instantiateViewController(withIdentifier: "BasketListView") as! BasketListView
         // Assign View Model to View

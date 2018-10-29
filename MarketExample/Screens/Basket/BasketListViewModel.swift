@@ -90,8 +90,7 @@ extension BasketListViewModel {
                         self.productsVariable.accept(updatedProducts)
                     }
                 case let .error(error):
-                    print(error)
-                    break
+                    self.error.onNext(error.localizedDescription)
             } }.disposed(by: disposeBag)
     }
 

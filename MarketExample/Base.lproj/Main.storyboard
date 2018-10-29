@@ -11,7 +11,7 @@
         <!--Product List View-->
         <scene sceneID="jxO-08-XVc">
             <objects>
-                <tableViewController storyboardIdentifier="ProductListView" id="8FE-bc-eF2" customClass="ProductListView" customModule="testRx" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProductListView" id="8FE-bc-eF2" customClass="ProductListView" customModule="MarketExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wc0-hW-Bae">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
         <!--Basket-->
         <scene sceneID="I8y-UV-JLE">
             <objects>
-                <tableViewController storyboardIdentifier="BasketListView" id="5Jz-pE-seu" customClass="BasketListView" customModule="testRx" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BasketListView" id="5Jz-pE-seu" customClass="BasketListView" customModule="MarketExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ykf-NP-pft">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

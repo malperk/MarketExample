@@ -10,13 +10,14 @@
 import Nimble
 import Quick
 import RxSwift
+import Moya
 
 final class ProductApiTests: QuickSpec {
     let disposeBag = DisposeBag()
     override func spec() {
-        // Moya cancel base request when stubbing "load failed with error" message not important
+        // Moya cancel base request when stubbing "load failed with error" message not important check notifyPluginsOfImpendingStub method
         it("make product stub request") {
-            waitUntil(timeout: 5.0) { done in
+            waitUntil(timeout:5.0) { done in
                 stubbedProductProvider.request(.allProducts, completion: { result in
                     switch result {
                     case let .success(response):

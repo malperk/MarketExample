@@ -27,6 +27,8 @@
 		B968AAFE2186568F008E6A50 /* FixerApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAFD2186568F008E6A50 /* FixerApi.swift */; };
 		B968AB00218657E4008E6A50 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AAFF218657E4008E6A50 /* Rate.swift */; };
 		B968AB0221865FAC008E6A50 /* CurrencyConverterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AB0121865FAC008E6A50 /* CurrencyConverterApi.swift */; };
+		B968AB0521866981008E6A50 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AB0421866981008E6A50 /* HUD.swift */; };
+		B968AB0721866997008E6A50 /* MoyaHudPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B968AB0621866997008E6A50 /* MoyaHudPlugin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		B968AAFD2186568F008E6A50 /* FixerApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixerApi.swift; sourceTree = "<group>"; };
 		B968AAFF218657E4008E6A50 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		B968AB0121865FAC008E6A50 /* CurrencyConverterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterApi.swift; sourceTree = "<group>"; };
+		B968AB0421866981008E6A50 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		B968AB0621866997008E6A50 /* MoyaHudPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaHudPlugin.swift; sourceTree = "<group>"; };
 		DA0BD81CB354145197C62D41 /* Pods-MarketExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-MarketExampleTests/Pods-MarketExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F484CB296AFDE6E2602F74F1 /* Pods_MarketExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFE880C6BD04FB409C422060 /* Pods-MarketExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarketExample.release.xcconfig"; path = "Target Support Files/Pods-MarketExample/Pods-MarketExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		B968AAF72186525A008E6A50 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				B968AB032186696F008E6A50 /* UI */,
 				B968AAF82186526C008E6A50 /* Currency */,
 			);
 			path = Helper;
@@ -226,6 +231,15 @@
 				B968AAF92186528A008E6A50 /* CurrencySymbols.json */,
 			);
 			path = Currency;
+			sourceTree = "<group>";
+		};
+		B968AB032186696F008E6A50 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B968AB0421866981008E6A50 /* HUD.swift */,
+				B968AB0621866997008E6A50 /* MoyaHudPlugin.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,9 +463,11 @@
 				B968AAEC21863941008E6A50 /* ProductListView.swift in Sources */,
 				B968AAE521862E75008E6A50 /* Product.swift in Sources */,
 				B968AAEE21863952008E6A50 /* ProductListViewModel.swift in Sources */,
+				B968AB0721866997008E6A50 /* MoyaHudPlugin.swift in Sources */,
 				B968AAE221862E1A008E6A50 /* ProductProtocols.swift in Sources */,
 				B968AAFE2186568F008E6A50 /* FixerApi.swift in Sources */,
 				B968AB0221865FAC008E6A50 /* CurrencyConverterApi.swift in Sources */,
+				B968AB0521866981008E6A50 /* HUD.swift in Sources */,
 				B968AAE821862EC7008E6A50 /* ProductApi.swift in Sources */,
 				B968AAF4218645C6008E6A50 /* BasketListView.swift in Sources */,
 				B968AB00218657E4008E6A50 /* Rate.swift in Sources */,

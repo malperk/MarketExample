@@ -6,7 +6,8 @@
 //  Copyright © 2018 Alper KARATAS. All rights reserved.
 //
 import Moya
-
+import Foundation
+import Alamofire
 enum ProductApi {
     case allProducts
 }
@@ -50,6 +51,14 @@ func makeExampleData() -> Data {
     return jsonString
 }
 
-let stubbedProductProvider = MoyaProvider<ProductApi>(endpointClosure: customEndpointClosure, stubClosure: MoyaProvider<ProductApi>.immediatelyStub)
+let manager = StubManager()
+let stubbedProductProvider = MoyaProvider<ProductApi>(
+    stubClosure: MoyaProvider<ProductApi>.immediatelyStub,manager: manager )
 
-
+final class StubManager: Manager {
+    var called = false
+    override func request(_ urlRequest: URLRequestConvertible) -> DataRequest {
+        called = true
+        return super.request(urlRequest)
+    }
+}
